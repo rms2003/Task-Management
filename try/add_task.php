@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php'; // Ensure this file has the correct mysqli connection
+include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -39,14 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font for kids */
-            background-color: #f0f4c3; /* Light green background */
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            background-color: #f0f4c3; 
             color: #333;
             margin: 0;
             padding: 0;
         }
         .navbar {
-            background: linear-gradient(135deg, #2196F3, #64B5F6); /* Blue gradient */
+            background: linear-gradient(135deg, #2196F3, #64B5F6); 
             padding: 10px;
             position: fixed;
             width: 100%;
@@ -54,14 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             z-index: 1000;
         }
         .navbar a {
-            color: white; /* White text */
-            font-size: 1.5rem; /* Increased font size for navbar */
-            margin-right: 20px; /* Spacing between links */
-            text-decoration: none; /* No underline */
+            color: white; 
+            font-size: 1.5rem; 
+            margin-right: 20px; 
+            text-decoration: none; 
         }
         .container {
             max-width: 600px;
-            margin: 80px auto; /* Space for fixed navbar */
+            margin: 80px auto; 
             padding: 20px;
             background-color: #fff; /* White background for the form */
             border-radius: 15px; /* More rounded corners */
