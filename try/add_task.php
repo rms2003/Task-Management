@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $status = trim($_POST['status']);
     $user_id = $_SESSION['user_id'];
 
-    // Prepare and execute the insert statement
+    //  the insert statement
     $stmt = $connection->prepare("INSERT INTO tasks (user_id, title, description, due_date, priority, status) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("isssss", $user_id, $title, $description, $due_date, $priority, $status);
 
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Task</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- icons -->
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif; 
@@ -63,57 +63,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             max-width: 600px;
             margin: 80px auto; 
             padding: 20px;
-            background-color: #fff; /* White background for the form */
-            border-radius: 15px; /* More rounded corners */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced box shadow */
-            border: 3px dashed #ff9800; /* Dashed border */
+            background-color: #fff; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+            border: 3px dashed #ff9800; 
         }
         h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #ff4081; /* Bright pink heading */
-        }
+            color: #ff4081;         }
         input, textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border-radius: 10px;
-            border: 2px solid #81d4fa; /* Bright blue border */
-            background-color: #e1f5fe; /* Light blue background for input */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Input shadow */
-            transition: border 0.3s; /* Smooth transition for focus */
+            border: 2px solid #81d4fa; 
+            background-color: #e1f5fe; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            transition: border 0.3s; 
         }
         input:focus, textarea:focus {
-            border-color: #ff5722; /* Bright orange on focus */
-            outline: none; /* Remove outline */
+            border-color: #ff5722; 
+            outline: none; 
         }
         select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border-radius: 10px;
-            border: 2px solid #81d4fa; /* Bright blue border */
-            background-color: #ffe0b2; /* Light peach background for select */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Input shadow */
-            transition: border 0.3s; /* Smooth transition for focus */
+            border: 2px solid #81d4fa; 
+            background-color: #ffe0b2; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            transition: border 0.3s; 
         }
         select:focus {
-            border-color: #ff5722; /* Bright orange on focus */
-            outline: none; /* Remove outline */
+            border-color: #ff5722; 
+            outline: none; 
         }
         button {
             width: 100%;
             padding: 10px;
-            background-color: #4caf50; /* Bright green for button */
+            background-color: #4caf50; 
             color: white;
             border: none;
-            border-radius: 10px; /* Rounded corners */
-            font-size: 18px; /* Larger font size */
+            border-radius: 10px; 
+            font-size: 18px; 
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth transition */
+            transition: background-color 0.3s ease; 
         }
         button:hover {
-            background-color: #388e3c; /* Darker green on hover */
+            background-color: #388e3c; 
         }
     </style>
 </head>
