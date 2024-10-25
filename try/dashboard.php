@@ -9,8 +9,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $search_query = '';
-$order_by = 'priority'; // Default order to priority
-$sort_priority = false; // Flag for sorting by priority
+$order_by = 'priority'; 
+$sort_priority = false; 
 
 // Check if a search or sort is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if sort button was clicked
     if (isset($_POST['sort_priority'])) {
-        $sort_priority = true; // Set flag to true if sorting by priority
+        $sort_priority = true; 
     }
 }
 
@@ -54,9 +54,9 @@ $stmt->close();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Colorful Dashboard</title>
+    <title>Dashboard</title>
     <style>
-        /* Your existing styles */
+        /*styles */
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif; 
             background-color: #e3f2fd;
@@ -182,22 +182,22 @@ $stmt->close();
             background-color: #1976D2; 
         }
 
-        /* Updated sort_priority button style */
+        
         .search-bar button[name="sort_priority"] {
-            background-color: #2196F3; /* Bright color for emphasis */
-            border: 2px solid #2196F3; /* Darker border for contrast */
-            color: white; /* Text color */
+            background-color: #2196F3; 
+            border: 2px solid #2196F3; 
+            color: white; 
             padding: 10px 15px;
-            width: 30%; /* Increased width for better visibility */
+            width: 30%; 
             font-size: 18px;
             border-radius: 5px;
             cursor: pointer; 
-            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+            transition: background-color 0.3s, transform 0.3s; 
         }
 
         .search-bar button[name="sort_priority"]:hover {
-            background-color: #f57c00; /* Darker shade on hover */
-            transform: scale(1.05); /* Slightly enlarge on hover */
+            background-color: #f57c00; 
+            transform: scale(1.05); 
         }
 
         .highlight {
