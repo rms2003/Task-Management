@@ -10,26 +10,26 @@
 
     <style>
         .navbar {
-            display: flex; /* Using flexbox for layout */
-            justify-content: space-between; /* Space between items */
-            align-items: center; /* Center items vertically */
-            padding: 10px; /* Consistent padding */
-            background-color: #1974D2; /* Background color */
-            color: white; /* Text color */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
-            height: 60px; /* Set height */
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px; 
+            background-color: #1974D2; 
+            color: white; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            height: 60px; 
         }
 
         .navbar a {
-            color: white; /* Link color */
-            text-decoration: none; /* No underline */
-            padding: 8px 16px; /* Padding for links */
-            font-size: 16px; /* Font size */
+            color: white; 
+            text-decoration: none; 
+            padding: 8px 16px; 
+            font-size: 16px; 
         }
 
         .navbar a:hover {
-            background-color: #0056b3; /* Change background on hover */
-            border-radius: 4px; /* Rounded corners on hover */
+            background-color: #0056b3; 
+            border-radius: 4px; 
         }
 
         .navbar-brand {
@@ -57,7 +57,6 @@
             background-color: white;
         }
 
-        /* Flexbox for aligning input and button */
         .form-inline {
             display: flex;
             align-items: center;
