@@ -1,6 +1,6 @@
 <?php  
 session_start();    
-include 'db.php'; // Ensure this file has the correct mysqli connection
+include 'db.php'; // mysqli connection
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 if (isset($_GET['id'])) {
     $task_id = $_GET['id'];
 
-    // Prepare and execute the select statement
+    // select statement
     $stmt = $connection->prepare("SELECT * FROM tasks WHERE id = ?");
     $stmt->bind_param("i", $task_id); // 'i' for integer
     $stmt->execute();
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $priority = trim($_POST['priority']);
     $status = trim($_POST['status']);
 
-    // Prepare and execute the update statement
+    // the update statement
     $stmt = $connection->prepare("UPDATE tasks SET title = ?, description = ?, due_date = ?, priority = ?, status = ? WHERE id = ?");
     $stmt->bind_param("sssssi", $title, $description, $due_date, $priority, $status, $task_id); // 's' for string, 'i' for integer
     $stmt->execute();
@@ -45,40 +45,40 @@ $stmt->close(); // Close the statement
     <title>Edit Task</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font for kids */
-            background-color: #f0f4c3; /* Light green background */
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            background-color: #f0f4c3; 
             color: #333;
-            margin: 0; /* Reset default margin */
-            padding: 0; /* Reset default padding */
+            margin: 0; 
+            padding: 0; 
         }
         .navbar {
-            background: linear-gradient(135deg, #2196F3, #64B5F6); /* Blue gradient */
-            padding: 10px; /* Padding for navbar */
-            position: fixed; /* Fixed position for navbar */
-            width: 100%; /* Full width */
-            top: 0; /* Stick to top */
-            z-index: 1000; /* On top of other elements */
+            background: linear-gradient(135deg, #2196F3, #64B5F6); 
+            padding: 10px; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
         }
         .navbar a {
-            color: white; /* White text */
-            font-size: 1.5rem; /* Increased font size for navbar */
-            margin-right: 20px; /* Spacing between links */
-            text-decoration: none; /* No underline */
+            color: white; 
+            font-size: 1.5rem; 
+            margin-right: 20px; 
+            text-decoration: none; 
         }
         .container {
             max-width: 600px;
             font-size: 20px;
-            margin: 80px auto; /* Space for fixed navbar */
+            margin: 80px auto; 
             padding: 20px;
-            background-color: #fff; /* White background for the form */
-            border-radius: 15px; /* More rounded corners */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced box shadow */
-            border: 3px dashed #ff9800; /* Dashed border */
+            background-color: #fff; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+            border: 3px dashed #ff9800;
         }
         h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #ff4081; /* Bright pink heading */
+            color: #ff4081; 
         }
         input, textarea, select {
             width: 100%;
@@ -86,32 +86,32 @@ $stmt->close(); // Close the statement
             padding: 10px;
             margin: 10px 0;
             border-radius: 10px;
-            border: 2px solid #81d4fa; /* Bright blue border */
-            background-color: #e1f5fe; /* Light blue background for input */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Input shadow */
-            transition: border 0.3s; /* Smooth transition for focus */
+            border: 2px solid #81d4fa; 
+            background-color: #e1f5fe; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            transition: border 0.3s; 
         }
         input:focus, textarea:focus, select:focus {
-            border-color: #ff5722; /* Bright orange on focus */
-            outline: none; /* Remove outline */
+            border-color: #ff5722; 
+            outline: none; 
         }
         button {
             width: 100%;
             padding: 10px;
-            background-color: #4caf50; /* Bright green for button */
+            background-color: #4caf50; 
             color: white;
             border: none;
-            border-radius: 10px; /* Rounded corners */
-            font-size: 20px; /* Larger font size */
+            border-radius: 10px; 
+            font-size: 20px; 
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth transition */
+            transition: background-color 0.3s ease; 
         }
         button:hover {
-            background-color: #388e3c; /* Darker green on hover */
+            background-color: #388e3c; 
         }
-        /* Colorful dropdowns */
+
         select {
-            background-color: #ffe0b2; /* Light peach background for select */
+            background-color: #ffe0b2; 
         }
     </style>
 </head>
