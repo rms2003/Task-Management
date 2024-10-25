@@ -61,7 +61,7 @@ $connection->close();
         }
         .container {
             display: flex;
-            flex-wrap: wrap; /* Allow wrap for smaller screens */
+            flex-wrap: wrap; 
             height: 70%;
             background-color: white;
             width: 95%;
@@ -89,7 +89,7 @@ $connection->close();
         .image-column img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: cover; /* Ensure the image scales correctly */
+            object-fit: cover; 
             border-radius: 15px; 
         }
         h2 {
